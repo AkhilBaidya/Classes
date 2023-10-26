@@ -6,9 +6,23 @@ using namespace std;
 
 class VideoGame : public DigitalMedia {
 
- public:  
+ public:
+  //constructor:
+  VideoGame();
 
+  //get publisher:
+  char getPublisher();
+
+  //get rating:
+  float getRating();
+
+  //set publisher:
+  void setPublisher(char newPublisher[50]);
+
+  //set rating:
+  void setRating(float newRating);
   
+
  protected:
   //variables unique to video games:
 
