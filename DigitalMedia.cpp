@@ -13,7 +13,7 @@ DigitalMedia::DigitalMedia() {
   
 }
 
-//constructor with setting variables:
+//construct object of the class and set variables:
 DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
 
   //create space for the variables:
@@ -27,10 +27,10 @@ DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
 
 //getting the title:
 DigitalMedia::getTitle() {
-
+  return title;
 }
 
 //getting the year:
 DigitalMedia::getYear() {
-
+  return year;
 }
