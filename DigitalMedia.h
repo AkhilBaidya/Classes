@@ -10,7 +10,7 @@ class DigitalMedia {
 public:
 
   DigitalMedia(); //constructor
-  DigitalMedia(char title[20], int year); //create a media with a specific title and year
+  DigitalMedia(char newTitle[20], int newYear); //create a media with a specific title and year
 
   char getTitle(); //function to get the title
   char getYear(); //function to get the year
