@@ -15,8 +15,8 @@ public:
   char getTitle(); //function to get the title
   int getYear(); //function to get the year
 
-  char setTitle(); //set just the title;
-  int setYear(); //set just the year
+  char setTitle(char newTitle[20]); //set just the title;
+  int setYear(int newYear); //set just the year
 
 private:
 
