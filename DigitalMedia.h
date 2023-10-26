@@ -14,4 +14,10 @@ public:
 
   char getTitle(); //function to get the title
   char getYear(); //function to get the year
+
+private:
+
+  //the title and year specific to a piece of digital media:
+  char title[20];
+  int year;
 };
