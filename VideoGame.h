@@ -6,8 +6,12 @@ using namespace std;
 
 class VideoGame : public DigitalMedia {
 
- public:
+ public:  
 
- protected:
   
+ protected:
+  //variables unique to video games:
+
+  char publisher[50];
+  float rating;
 };
