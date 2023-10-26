@@ -13,7 +13,10 @@ public:
   DigitalMedia(char newTitle[20], int newYear); //create a media with a specific title and year
 
   char getTitle(); //function to get the title
-  char getYear(); //function to get the year
+  int getYear(); //function to get the year
+
+  char setTitle(); //set just the title;
+  int setYear(); //set just the year
 
 private:
 
