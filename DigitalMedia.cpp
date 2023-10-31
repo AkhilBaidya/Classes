@@ -36,25 +36,21 @@ DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
 }
 
 //setting the title:
-DigitalMedia::setTitle(char newTitle[20]) {
+void DigitalMedia::setTitle(char newTitle[20]) {
   strcpy(title, newTitle); //set variable equal to input
 }
 
 //getting the title:
 Title DigitalMedia::getTitle() {
-
-  
-  char* toTitle = new char[20]; 
-  (*toTitle) = title;
-  return toTitle;
+  return Title;
 }
 
 //setting the year:
-DigitalMedia::setYear() {
+void DigitalMedia::setYear() {
   year = newYear; //set variable equal to input
 }
 
 //getting the year:
-DigitalMedia::getYear() {
+int DigitalMedia::getYear() {
   return year;
 }
