@@ -4,11 +4,18 @@
 
 using namespace std;
 
+struct Title { //idea to return a struct w/ an array instead of an array from https://stackoverflow.com/questions/4264304/how-to-return-an-array-from-a-function
+  char theTitle[20];
+};
+
 //constructor function:
 DigitalMedia::DigitalMedia() {
 
   //create space for the variables in the class:
   title = new char[20];
+  Title = new Title;
+  Title.theTitle = title; //create a Title struct to encase the title array
+
   year = new int;
   
 }
@@ -18,6 +25,9 @@ DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
 
   //create space for the variables:
   title = new char[20];
+  Title = new Title;
+  Title.theTitle = title;
+  
   year = new int;
 
   //define them based on the inputs newTitle and newYear:
@@ -31,8 +41,12 @@ DigitalMedia::setTitle(char newTitle[20]) {
 }
 
 //getting the title:
-DigitalMedia::getTitle() {
-  return title;
+Title DigitalMedia::getTitle() {
+
+  
+  char* toTitle = new char[20]; 
+  (*toTitle) = title;
+  return toTitle;
 }
 
 //setting the year:
