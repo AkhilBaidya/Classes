@@ -17,7 +17,7 @@ DigitalMedia::DigitalMedia() {
   //Title = new Title;
   //Title.theTitle = title; //create a Title struct to encase the title array
 
-  year = new int;
+  int year;
   
 }
 
@@ -29,7 +29,7 @@ DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
   //Title = new Title;
   //Title.theTitle = title;
   
-  year = new int;
+  int year;
 
   //define them based on the inputs newTitle and newYear:
   strcpy(*title, *newTitle);
