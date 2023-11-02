@@ -9,7 +9,7 @@ class DigitalMedia { //idea to have title returned as a struct instead of an arr
 
   struct Title {
     char theTitle[20];
-  }
+  };
   
 public:
 
