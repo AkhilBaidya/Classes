@@ -18,15 +18,22 @@ int main() {
   char* input = new char[20];
   cin.get(input, 20);
   
-  DigitalMedia* coolMedia = new DigitalMedia(input, 2023);
-  
-  /*Title output;
+  DigitalMedia* coolMedia;
+  coolMedia = new DigitalMedia(input, 2023);
 
-  output = coolMedia -> getTitle();
-  cout << output -> theTitle[0];
+  char* output = new char[20];
+
+  strcpy(output, coolMedia -> getTitle());
+
+  for (int i; i < strlen(output) - 1; i++) {
+    cout << output[i];
+  }
+
+  //cout << *(output[0]);
+
   cout << coolMedia->getYear() << endl;
   coolMedia -> setYear(1578);
   cout << coolMedia->getYear() << endl;
-  */
+ 
   return 0;
 }
