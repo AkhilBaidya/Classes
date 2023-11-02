@@ -22,7 +22,7 @@ DigitalMedia::DigitalMedia() {
 }
 
 //construct object of the class and set variables:
-DigitalMedia::DigitalMedia(vector<char> newTitle, int newYear) {
+DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
 
   //create space for the variables:
   title = new char[20];
