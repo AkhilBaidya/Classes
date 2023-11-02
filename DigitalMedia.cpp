@@ -32,7 +32,7 @@ DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
   int year;
 
   //define them based on the inputs newTitle and newYear:
-  strcpy(*title, *newTitle);
+  strcpy(title, newTitle);
 
   //title = newTitle;
   year = newYear;
@@ -40,7 +40,7 @@ DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
 
 //setting the title:
 void DigitalMedia::setTitle(char* newTitle) {
-  strcpy(*title, *newTitle); //set variable equal to input
+  strcpy(title, newTitle); //set variable equal to input
   //title = newTitle;
 }
 
@@ -50,7 +50,7 @@ char* DigitalMedia::getTitle() {
 }
 
 //setting the year:
-void DigitalMedia::setYear() {
+void DigitalMedia::setYear(int newYear) {
   year = newYear; //set variable equal to input
 }
 
