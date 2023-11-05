@@ -33,11 +33,11 @@ int main() {
       SEARCH(list);
     }
 
-    else if (strcmp("DELETE", command) != 0 {
+    else if (strcmp("DELETE", command) != 0) {
       DELETE(list);
     }
 
-    else if (strcmp("QUIT", command) != 0 {
+    else if (strcmp("QUIT", command) != 0) {
 	editList = false; //this will end the loop
     }
 
@@ -75,6 +75,8 @@ int main() {
   coolMedia -> setRating (1.5);
 
   cout << coolMedia -> getRating() << endl;*/
+
+  cout << "exiting the program" << endl;
   return 0;
 }
 
