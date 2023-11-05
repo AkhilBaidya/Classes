@@ -7,25 +7,25 @@ VideoGame::VideoGame() {
   rating = 0.00; //default rating
 }
 
-VideoGame::VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating) {
+VideoGame::VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating):DigitalMedia(theTitle, theYear) {
   title = theTitle;
   year = theYear;
   publisher = thePublisher;
   rating = theRating;
 }
 
-VideoGame::setPublisher(char newPublisher[50]) {
+void VideoGame::setPublisher(char newPublisher[50]) {
   
 }
 
-VideoGame::getPublisher() {
+char* VideoGame::getPublisher() {
+  return publisher;
+}
+
+void VideoGame::setRating(float newRating) {
 
 }
 
-VideoGame::setRating(int newRating) {
-
-}
-
-VideoGame::getRating() {
-
+float VideoGame::getRating() {
+  return rating;
 }
