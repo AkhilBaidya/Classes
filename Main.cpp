@@ -81,6 +81,22 @@ int main() {
 }
 
 void ADD(vector<DigitalMedia*> theList) {
+
+  char type[10];
+  char theTitle[20];
+  int theYear;
+
+  cout << "What kind of media would you like to add (videogame, music, movie)?" << endl;
+  cin >> type;
+
+  //set the title:
+  cout << "What is its title?" << endl;
+  cin >> theTitle;
+
+  //set the year:
+  cout << "What is its year of publication?" << endl;
+  cin >> theYear;
+
   return;
 }
 
