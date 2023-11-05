@@ -71,6 +71,8 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   cin >> theYear;
 
   //adding a videogame:
+
+  if (!strcmp("videogame", type)) {
   char thePublisher[50];
   float theRating;
 
@@ -82,14 +84,15 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
 
   VideoGame* newGame = new VideoGame(theTitle, theYear, thePublisher, theRating);
   theList.push_back(newGame);
-  
+  }
 
   //adding a music:
+
+  if (!strcmp("music", type)) {
   char theArtist[50];
   float theDuration;
   float theRating2;
 
-  
   cout << "Who is the song's artist?" << endl;
   cin >> theArtist;
 
@@ -101,21 +104,30 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
 
   Music* newSong = new Music(theTitle, theYear, theArtist, theDuration, theRating2);
   theList.push_back(newSong);
-  
+  }
+
   //adding a movie:
+
+  if (!strcmp("movie", type)) {
   char theDirector[50];
   float theDuration2;
   float theRating3;
 
-  cout << "Who is the game's publisher?" << endl;
-  cin >> thePublisher;
+  cout << "Who is the movie's director?" << endl;
+  cin >> theDirector;
 
-  cout << "What is the game's rating?" << endl;
-  cin >> theRating;
-
-  VideoGame* newGame = new VideoGame(theTitle, theYear, thePublisher, theRating);
-  theList.push_back(newGame);
+  cout << "What is the movies's duration (in minutes)?" << endl;
+  cin >> theDuration2;
   
+  cout << "What is the movies's rating?" << endl;
+  cin >> theRating3;
+
+  Movie* newMovie = new Movie(theTitle, theYear, theDirector, theDuration2, theRating3);
+  theList.push_back(newMovie);
+  }
+
+  cout << "added digital media" << endl;
+
   return;
 }
 
