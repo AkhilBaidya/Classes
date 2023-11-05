@@ -27,60 +27,27 @@ int main() {
   while (editList) {
 
     char command[7];
-    cin << "What would you like to edit in the Digital Media list (ADD, SEARCH, DELETE, QUIT)?" << endl;
+    cout << "What would you like to edit in the Digital Media list (ADD, SEARCH, DELETE, QUIT)?" << endl;
     cin >> command;
 
     //use of strcmp based on code written in my StudentList project:
-    if (strcmp("ADD", command) != 0) {
+    if (!strcmp("ADD", command)) {
       ADD(list);
     }
 
-    else if (strcmp("SEARCH", command) != 0) {
+    else if (!strcmp("SEARCH", command)) {
       SEARCH(list);
     }
 
-    else if (strcmp("DELETE", command) != 0) {
+    else if (!strcmp("DELETE", command)) {
       DELETE(list);
     }
 
-    else if (strcmp("QUIT", command) != 0) {
+    else if (!strcmp("QUIT", command)) {
 	editList = false; //this will end the loop
     }
 
   }
-
-  /*Testing code:
-  char input[20]; 
-  cin >> input;
-
-  char input2[50];
-  cin >> input2;
-  
-  VideoGame* coolMedia = new VideoGame(input,2024, input2, 0.00);
-
-  char* output = coolMedia -> getTitle();
-
-  for (int i = 0; i < strlen(output); i++) {
-    cout << output[i];
-    }
-
-  char* pub = coolMedia -> getPublisher();
-
-  for (int i = 0; i < strlen(pub); i++) {
-    cout << pub[i];
-  }
-  
-  cout << coolMedia->getYear() << endl;
-  
-  coolMedia -> setYear(1578);
-
-  cout << coolMedia->getYear() << endl;
-
-  cout << coolMedia -> getRating() << endl;
-
-  coolMedia -> setRating (1.5);
-
-  cout << coolMedia -> getRating() << endl;*/
 
   cout << "exiting the program" << endl;
   return 0;
@@ -113,7 +80,7 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   cout << "What is the game's rating?" << endl;
   cin >> theRating;
 
-  VideoGame* newGame = VideoGame(theTitle, theYear, thePublisher, theRating);
+  VideoGame* newGame = new VideoGame(theTitle, theYear, thePublisher, theRating);
   theList.push_back(newGame);
   
 
