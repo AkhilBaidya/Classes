@@ -15,7 +15,7 @@ VideoGame::VideoGame(char theTitle[20], int theYear, char thePublisher[50], floa
 }
 
 void VideoGame::setPublisher(char newPublisher[50]) {
-  
+  publisher = newPublisher;
 }
 
 char* VideoGame::getPublisher() {
@@ -23,7 +23,7 @@ char* VideoGame::getPublisher() {
 }
 
 void VideoGame::setRating(float newRating) {
-
+  rating = newRating;
 }
 
 float VideoGame::getRating() {
