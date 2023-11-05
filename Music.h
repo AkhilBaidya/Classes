@@ -20,6 +20,12 @@ class Music : public DigitalMedia {
 
   float getRating();
 
+  void setArtist(char newArtist[50]);
+
+  void setDuration(float newDuration);
+
+  void setRating (float newRating);
+
  protected:
 
 
