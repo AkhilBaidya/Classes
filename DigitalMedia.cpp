@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstring>
 #include "DigitalMedia.h"
-#include <vector>
 
 using namespace std;
 
@@ -17,7 +16,7 @@ DigitalMedia::DigitalMedia() {
   //Title = new Title;
   //Title.theTitle = title; //create a Title struct to encase the title array
 
-  int year;
+  year = 2023; //default year
   
 }
 
@@ -29,13 +28,12 @@ DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
   //Title = new Title;
   //Title.theTitle = title;
   
-  int year;
+  year = newYear;
 
   //define them based on the inputs newTitle and newYear:
   strcpy(title, newTitle);
 
   //title = newTitle;
-  year = newYear;
 }
 
 //setting the title:
