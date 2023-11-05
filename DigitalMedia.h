@@ -1,7 +1,7 @@
 #ifndef DIGITALMEDIA_H
 #define DIGITALMEDIA_H
 
-//DigitalMedia Class:
+//DigitalMedia Class: (header guards as seen in https://www.learncpp.com/cpp-tutorial/header-guards/#google_vignette)
 #include <iostream>
 #include <cstring>
 
