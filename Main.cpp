@@ -89,10 +89,32 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   float theDuration;
   float theRating2;
 
+  
+  cout << "Who is the song's artist?" << endl;
+  cin >> theArtist;
+
+  cout << "What is the song's duration (in minutes)?" << endl;
+  cin >> theDuration;
+  
+  cout << "What is the song's rating?" << endl;
+  cin >> theRating2;
+
+  Music* newSong = new Music(theTitle, theYear, theArtist, theDuration, theRating2);
+  theList.push_back(newSong);
+  
   //adding a movie:
   char theDirector[50];
   float theDuration2;
   float theRating3;
+
+  cout << "Who is the game's publisher?" << endl;
+  cin >> thePublisher;
+
+  cout << "What is the game's rating?" << endl;
+  cin >> theRating;
+
+  VideoGame* newGame = new VideoGame(theTitle, theYear, thePublisher, theRating);
+  theList.push_back(newGame);
   
   return;
 }
