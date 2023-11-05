@@ -2,7 +2,6 @@
 
 #include <iostream>
 #include <cstring>
-#include <vector>
 
 using namespace std;
 
@@ -15,12 +14,12 @@ class DigitalMedia { //idea to have title returned as a struct instead of an arr
 public:
 
   DigitalMedia(); //constructor
-  DigitalMedia(char* newTitle, int newYear); //create a media with a specific title and year
+  DigitalMedia(char newTitle[20], int newYear); //create a media with a specific title and year
 
   char* getTitle(); //function to get the title
   int getYear(); //function to get the year
 
-  void setTitle(char* newTitle); //set just the title;
+  void setTitle(char newTitle[20]); //set just the title;
   void setYear(int newYear); //set just the year
 
 private:
