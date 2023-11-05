@@ -1,6 +1,8 @@
 #include <iostream>
 #include <cstring>
 #include "VideoGame.h"
+#include "Music.h"
+#include "Movie.h"
 #include <vector>
 
 using namespace std;
@@ -97,6 +99,20 @@ void ADD(vector<DigitalMedia*> theList) {
   cout << "What is its year of publication?" << endl;
   cin >> theYear;
 
+  //adding a videogame:
+  char thePublisher[50];
+  float theRating;
+
+  //adding a music:
+  char theArtist[50];
+  float theDuration;
+  float theRating;
+
+  //adding a movie:
+  char theDirector[50];
+  float theDuration;
+  float theRating;
+  
   return;
 }
 
