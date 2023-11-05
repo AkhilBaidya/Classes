@@ -28,5 +28,9 @@ class Music : public DigitalMedia {
 
  protected:
 
+  char* artist;
+  float duration;
+  float rating;
+
 
 };
