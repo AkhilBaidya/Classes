@@ -82,7 +82,7 @@ int main() {
   return 0;
 }
 
-void ADD(vector<DigitalMedia*> theList) {
+void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video on Classes for pass by reference syntax for vector
 
   char type[10];
   char theTitle[20];
@@ -102,6 +102,16 @@ void ADD(vector<DigitalMedia*> theList) {
   //adding a videogame:
   char thePublisher[50];
   float theRating;
+
+  cout << "Who is the game's publisher?" << endl;
+  cin >> thePublisher;
+
+  cout << "What is the game's rating?" << endl;
+  cin >> theRating;
+
+  VideoGame* newGame = VideoGame(theTitle, theYear, thePublisher, theRating);
+  theList.push_back(newGame);
+  
 
   //adding a music:
   char theArtist[50];
