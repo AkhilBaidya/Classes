@@ -11,7 +11,7 @@ class VideoGame : public DigitalMedia {
   VideoGame();
 
   //construct with setting variables:
-  VideoGame(char title[20], int year, char publisher[50], float rating);
+  VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating);
 
   //get publisher:
   char* getPublisher();
