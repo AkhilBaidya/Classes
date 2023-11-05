@@ -17,19 +17,25 @@ Music::Music(char theTitle[20], int theYear, char theArtist[50], float theDurati
 }
 
 void setArtist(char newArtist[50]) {
+  artist = newArtist;
 }
 
 char* getArtist() {
+  return artist;
 }
 
 void setDuration(float newDuration) {
+  duration = newDuration;
 }
 
 float getDuration() {
+  return duration;
 }
 
 void setRating(float newRating) {
+  rating = newRating;
 }
 
 float getRating(){
+  return rating;
 }
