@@ -22,7 +22,7 @@ public:
   void setTitle(char newTitle[20]); //set just the title;
   void setYear(int newYear); //set just the year
 
-private:
+protected:
 
   //the title and year specific to a piece of digital media:
   char* title;
