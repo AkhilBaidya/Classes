@@ -15,25 +15,33 @@ using namespace std;
   
 int main() {
 
-  char* input = new char[20];
+  //char* inputPntr = new char[20];
+  char input[20]; 
   cin.get(input, 20);
+  char* inputPnt = input;
   
-  DigitalMedia* coolMedia;
-  coolMedia = new DigitalMedia(input, 2023);
+  DigitalMedia* coolMedia = new DigitalMedia(input,1500);
 
-  char* output = new char[20];
+  char* output = coolMedia -> getTitle();
 
-  strcpy(output, coolMedia -> getTitle());
+  //strcpy(output, coolMedia -> getTitle());
 
-  for (int i; i < strlen(output) - 1; i++) {
+
+  /*for (int i; i< strlen(input); i++) {
+    cout << input[i];
+    }*/
+
+  cout << "in the for loop with " << strlen(output) << " length" << endl;
+  for (int i = 0; i < strlen(output); i++) {
+    cout << "oh" << endl;
     cout << output[i];
-  }
-
-  //cout << *(output[0]);
-
+    }
+  cout << "out of the for loop" << endl;
+  
   cout << coolMedia->getYear() << endl;
+  
   coolMedia -> setYear(1578);
+
   cout << coolMedia->getYear() << endl;
- 
   return 0;
 }
