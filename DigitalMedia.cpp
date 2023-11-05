@@ -21,7 +21,7 @@ DigitalMedia::DigitalMedia() {
 }
 
 //construct object of the class and set variables:
-DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
+DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
 
   //create space for the variables:
   title = new char[20];
@@ -37,7 +37,7 @@ DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
 }
 
 //setting the title:
-void DigitalMedia::setTitle(char* newTitle) {
+void DigitalMedia::setTitle(char newTitle[20]) {
   strcpy(title, newTitle); //set variable equal to input
   //title = newTitle;
 }
