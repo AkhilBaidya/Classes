@@ -19,6 +19,28 @@ int main() {
   vector<DigitalMedia*> list;
   
   while (editList) {
+
+    char command[7];
+    cin << "What would you like to edit in the Digital Media list (ADD, SEARCH, DELETE, QUIT)?" << endl;
+    cin >> command;
+
+    //use of strcmp based on code written in my StudentList project:
+    if (strcmp("ADD", command) != 0) {
+      ADD(list);
+    }
+
+    else if (strcmp("SEARCH", command) != 0) {
+      SEARCH(list);
+    }
+
+    else if (strcmp("DELETE", command) != 0 {
+      DELETE(list);
+    }
+
+    else if (strcmp("QUIT", command) != 0 {
+	editList = false; //this will end the loop
+    }
+
   }
 
   /*Testing code:
