@@ -16,26 +16,26 @@ Music::Music(char theTitle[20], int theYear, char theArtist[50], float theDurati
   rating = theRating;
 }
 
-void setArtist(char newArtist[50]) {
+void Music::setArtist(char newArtist[50]) {
   artist = newArtist;
 }
 
-char* getArtist() {
+char* Music::getArtist() {
   return artist;
 }
 
-void setDuration(float newDuration) {
+void Music::setDuration(float newDuration) {
   duration = newDuration;
 }
 
-float getDuration() {
+float Music::getDuration() {
   return duration;
 }
 
-void setRating(float newRating) {
+void Music::setRating(float newRating) {
   rating = newRating;
 }
 
-float getRating(){
+float Music::getRating(){
   return rating;
 }
