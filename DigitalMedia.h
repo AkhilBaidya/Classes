@@ -1,5 +1,7 @@
-//DigitalMedia Class:
+#ifndef DIGITALMEDIA_H
+#define DIGITALMEDIA_H
 
+//DigitalMedia Class:
 #include <iostream>
 #include <cstring>
 
@@ -29,3 +31,5 @@ protected:
   int year;
   //Title Title;
 };
+
+#endif
