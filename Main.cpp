@@ -1,6 +1,6 @@
 #include <iostream>
 #include <cstring>
-#include "DigitalMedia.h"
+#include "VideoGame.h"
 #include <vector>
 
 using namespace std;
@@ -15,10 +15,20 @@ next idea to use char* for function types (that the function returns a char poin
   
 int main() {
 
-  char input[20]; 
-  cin.get(input, 20);
+  bool editList = true;
+  vector<DigitalMedia*> list;
   
-  DigitalMedia* coolMedia = new DigitalMedia(input,2024);
+  while (editList) {
+  }
+
+  /*Testing code:
+  char input[20]; 
+  cin >> input;
+
+  char input2[50];
+  cin >> input2;
+  
+  VideoGame* coolMedia = new VideoGame(input,2024, input2, 0.00);
 
   char* output = coolMedia -> getTitle();
 
@@ -26,6 +36,11 @@ int main() {
     cout << output[i];
     }
 
+  char* pub = coolMedia -> getPublisher();
+
+  for (int i = 0; i < strlen(pub); i++) {
+    cout << pub[i];
+  }
   
   cout << coolMedia->getYear() << endl;
   
@@ -33,5 +48,23 @@ int main() {
 
   cout << coolMedia->getYear() << endl;
 
+  cout << coolMedia -> getRating() << endl;
+
+  coolMedia -> setRating (1.5);
+
+  cout << coolMedia -> getRating() << endl;*/
   return 0;
 }
+
+void ADD(vector<DigitalMedia*> theList) {
+  return;
+}
+
+void SEARCH(vector<DigitalMedia*> theList) {
+  return;
+}
+
+void DELETE(vector<DigitalMedia*> theList) {
+  return;
+}
+
