@@ -14,7 +14,11 @@ since a character array cannot be returned from a function, an object that conta
 
 next idea to use char* for function types (that the function returns a char pointer to the array it takes in) is inspired by Mr. Galbraith's video on Classes in Canvas.
   };*/
-  
+
+void ADD(vector<DigitalMedia*> &theList);
+void SEARCH(vector<DigitalMedia*> &theList);
+void DELETE(vector<DigitalMedia*> &theList);
+
 int main() {
 
   bool editList = true;
@@ -116,21 +120,21 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   //adding a music:
   char theArtist[50];
   float theDuration;
-  float theRating;
+  float theRating2;
 
   //adding a movie:
   char theDirector[50];
-  float theDuration;
-  float theRating;
+  float theDuration2;
+  float theRating3;
   
   return;
 }
 
-void SEARCH(vector<DigitalMedia*> theList) {
+void SEARCH(vector<DigitalMedia*> &theList) {
   return;
 }
 
-void DELETE(vector<DigitalMedia*> theList) {
+void DELETE(vector<DigitalMedia*> &theList) {
   return;
 }
 
