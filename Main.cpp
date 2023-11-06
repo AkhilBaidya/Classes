@@ -25,7 +25,7 @@ int main() {
 
   strcpy(output, coolMedia -> getTitle());
 
-  for (int i; i < strlen(output) - 1; i++) {
+  for (int i; i < strlen(output); i++) {
     cout << output[i];
   }
 
