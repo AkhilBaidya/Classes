@@ -14,6 +14,10 @@ VideoGame::VideoGame(char theTitle[20], int theYear, char thePublisher[50], floa
   rating = theRating;
 }
 
+VideoGame::~VideoGame() {
+  delete publisher;
+}
+
 void VideoGame::setPublisher(char newPublisher[50]) {
   publisher = newPublisher;
 }
