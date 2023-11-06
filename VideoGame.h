@@ -7,11 +7,17 @@ using namespace std;
 class VideoGame : public DigitalMedia {
 
  public:
+
+  const char* type = "videogame";
+  
   //constructor:
   VideoGame();
 
   //construct with setting variables:
   VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating);
+
+  //deconstructor:
+  ~VideoGame(); 
 
   //get publisher:
   char* getPublisher();
