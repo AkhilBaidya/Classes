@@ -1,5 +1,6 @@
 #include <iostream>
 #include <cstring>
+#include "DigitalMedia.h"
 #include "VideoGame.h"
 #include "Music.h"
 #include "Movie.h"
@@ -136,6 +137,16 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 }
 
 void DELETE(vector<DigitalMedia*> &theList) {
-  return;
+  char input[20];
+  cin >> input;
+
+  DigitalMedia* media = new DigitalMedia(input, 1000);
+
+  delete media;
+  media = NULL;
+ //help from Mr. Galbraith for this code
+  cout << "deleted!";
+ 
+  //help from mr. galbraith for how to work with deconstructors (delete will just call this decons. and decons. only needs to delete and only will be able to delete pointers and non-primitive type data stored under the class, such as title, not year);
 }
 
