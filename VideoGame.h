@@ -10,8 +10,11 @@ class VideoGame : public DigitalMedia {
   //constructor:
   VideoGame();
 
+  //construct with setting variables:
+  VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating);
+
   //get publisher:
-  char getPublisher();
+  char* getPublisher();
 
   //get rating:
   float getRating();
@@ -26,6 +29,6 @@ class VideoGame : public DigitalMedia {
  protected:
   //variables unique to video games:
 
-  char publisher[50];
+  char* publisher;
   float rating;
 };

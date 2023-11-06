@@ -1,7 +1,6 @@
 #include <iostream>
 #include <cstring>
 #include "DigitalMedia.h"
-#include <vector>
 
 using namespace std;
 
@@ -17,29 +16,28 @@ DigitalMedia::DigitalMedia() {
   //Title = new Title;
   //Title.theTitle = title; //create a Title struct to encase the title array
 
-  int year;
+  year = 2023; //default year
   
 }
 
 //construct object of the class and set variables:
-DigitalMedia::DigitalMedia(char* newTitle, int newYear) {
+DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
 
   //create space for the variables:
   title = new char[20];
   //Title = new Title;
   //Title.theTitle = title;
   
-  int year;
+  year = newYear;
 
   //define them based on the inputs newTitle and newYear:
   strcpy(title, newTitle);
 
   //title = newTitle;
-  year = newYear;
 }
 
 //setting the title:
-void DigitalMedia::setTitle(char* newTitle) {
+void DigitalMedia::setTitle(char newTitle[20]) {
   strcpy(title, newTitle); //set variable equal to input
   //title = newTitle;
 }
