@@ -36,6 +36,12 @@ DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
   //title = newTitle;
 }
 
+//destroy class object:
+DigitalMedia::~DigitalMedia() {
+  delete[] title; //https://www.youtube.com/watch?v=PXcRe-W2w7s&t=980s was used to get that I need to only delete dynamically allocated memory (video provided on Canvas about the Rule of Three implementation - also showed how to delete an array with delete[])
+}
+
+
 //setting the title:
 void DigitalMedia::setTitle(char newTitle[20]) {
   strcpy(title, newTitle); //set variable equal to input
