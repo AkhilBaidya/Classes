@@ -17,7 +17,8 @@ public:
 
   DigitalMedia(); //constructor
   DigitalMedia(char newTitle[20], int newYear); //create a media with a specific title and year
-
+  ~DigitalMedia();//destructor
+  
   char* getTitle(); //function to get the title
   int getYear(); //function to get the year
 
