@@ -16,6 +16,11 @@ Movie::Movie(char theTitle[20], int theYear, char theDirector[50], float theDura
   rating = theRating;
 }
 
+Movie::~Movie(){
+  delete title;
+  delete director;
+}
+
 void Movie::setDirector(char newDirector[50]) {
   director = newDirector;
 }
@@ -38,4 +43,8 @@ void Movie::setRating(float newRating){
 
 float Movie::getRating() {
   return rating;
+}
+
+char* Movie::getType() {
+  return type;
 }
