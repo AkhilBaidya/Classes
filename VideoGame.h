@@ -16,7 +16,7 @@ class VideoGame : public DigitalMedia {
   //construct with setting variables:
   VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating);
 
-  //deconstructor:
+  //destructor:
   ~VideoGame(); 
 
   //get publisher:
@@ -25,11 +25,16 @@ class VideoGame : public DigitalMedia {
   //get rating:
   float getRating();
 
+  //get type:
+
+  char* getType();
+  
   //set publisher:
   void setPublisher(char newPublisher[50]);
 
   //set rating:
   void setRating(float newRating);
+
   
 
  protected:
