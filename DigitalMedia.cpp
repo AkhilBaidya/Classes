@@ -15,8 +15,9 @@ DigitalMedia::DigitalMedia() {
   title = new char[20];
   //Title = new Title;
   //Title.theTitle = title; //create a Title struct to encase the title array
-
   year = 2023; //default year
+
+  type = 0;
   
 }
 
@@ -30,10 +31,13 @@ DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
   
   year = newYear;
 
+  type = 0;
+  
   //define them based on the inputs newTitle and newYear:
   strcpy(title, newTitle);
 
   //title = newTitle;
+  
 }
 
 //destroy class object:
@@ -61,4 +65,8 @@ void DigitalMedia::setYear(int newYear) {
 //getting the year:
 int DigitalMedia::getYear() {
   return year;
+}
+
+int DigitalMedia::getType() {
+  return type;
 }
