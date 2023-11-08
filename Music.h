@@ -12,25 +12,25 @@ class Music : public DigitalMedia {
 
   Music();
   
-  Music(char theTitle[20], int theYear, char theArtist[50], float theDuration, float theRating); 
+  Music(char theTitle[20], int theYear, char theArtist[50], char thePublisher[50], float theDuration); 
 
   char* getArtist();
 
-  float getDuration();
+  char* getPublisher();
 
-  float getRating();
+  float getDuration();
 
   void setArtist(char newArtist[50]);
 
+  void setPublisher(char newPublisher[50]);
+  
   void setDuration(float newDuration);
-
-  void setRating (float newRating);
 
  protected:
 
   char* artist;
   float duration;
-  float rating;
+  char* publisher;
 
 
 };
