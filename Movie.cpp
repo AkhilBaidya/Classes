@@ -6,6 +6,7 @@ Movie::Movie() {
   director = new char[50];
   duration = 0.00;
   rating = 0.00;
+  type = 2;
 }
 
 Movie::Movie(char theTitle[20], int theYear, char theDirector[50], float theDuration, float theRating):DigitalMedia(theTitle, theYear) {
@@ -14,11 +15,12 @@ Movie::Movie(char theTitle[20], int theYear, char theDirector[50], float theDura
   director = theDirector;
   duration = theDuration;
   rating = theRating;
+  type = 2;
 }
 
 Movie::~Movie(){
-  delete title;
-  delete director;
+  delete[] title;
+  delete[] director;
 }
 
 void Movie::setDirector(char newDirector[50]) {
@@ -45,6 +47,3 @@ float Movie::getRating() {
   return rating;
 }
 
-char* Movie::getType() {
-  return type;
-}
