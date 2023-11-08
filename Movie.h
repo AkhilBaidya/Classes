@@ -9,8 +9,6 @@ using namespace std;
 class Movie : public DigitalMedia {
 
  public:
-
-  const char* type = "movie";
   
   Movie();
 
@@ -23,8 +21,6 @@ class Movie : public DigitalMedia {
   float getDuration();
 
   float getRating();
-
-  char* getType();
 
   void setDirector(char newDirector[50]);
 
