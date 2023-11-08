@@ -7,8 +7,6 @@ using namespace std;
 class VideoGame : public DigitalMedia {
 
  public:
-
-  const char* type = "videogame";
   
   //constructor:
   VideoGame();
@@ -17,7 +15,7 @@ class VideoGame : public DigitalMedia {
   VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating);
 
   //destructor:
-  ~VideoGame(); 
+  virtual ~VideoGame(); 
 
   //get publisher:
   char* getPublisher();
@@ -25,21 +23,16 @@ class VideoGame : public DigitalMedia {
   //get rating:
   float getRating();
 
-  //get type:
-
-  char* getType();
-  
   //set publisher:
   void setPublisher(char newPublisher[50]);
 
   //set rating:
   void setRating(float newRating);
 
-  
 
  protected:
   //variables unique to video games:
-
+  
   char* publisher;
   float rating;
 };
