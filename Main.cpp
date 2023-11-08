@@ -133,6 +133,22 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
 }
 
 void SEARCH(vector<DigitalMedia*> &theList) {
+
+  char choice[20];
+  cout << "Would you like to search by name or year?" << endl;
+  cin >> choice;
+
+  if (!strcmp("name", choice)) {
+    char name[20];
+    
+    
+  }
+
+  else if (!strcmp("year", choice)) {
+    char year[20];
+  }
+
+
   return;
 }
 
@@ -140,10 +156,12 @@ void DELETE(vector<DigitalMedia*> &theList) {
   char input[20];
   cin >> input;
 
-  DigitalMedia* media = new DigitalMedia(input, 1000);
+  VideoGame* media = new VideoGame(input, 1000, input, 5.00);
 
+  cout << media -> getType(); 
+  
   delete media;
-  media = NULL;
+  //media = NULL;
  //help from Mr. Galbraith for this code
   cout << "deleted!";
  
