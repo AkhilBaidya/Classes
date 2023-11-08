@@ -10,15 +10,21 @@ class Movie : public DigitalMedia {
 
  public:
 
+  const char* type = "movie";
+  
   Movie();
 
   Movie(char theTitle[20], int theYear, char theDirector[50], float theDuration, float theRating);
 
+  ~Movie(); //destructor
+  
   char* getDirector();
 
   float getDuration();
 
   float getRating();
+
+  char* getType();
 
   void setDirector(char newDirector[50]);
 
