@@ -48,11 +48,11 @@ int main() {
 	editList = false; //this will end the loop
     }
 
-    //testing if vector elements can be accessed
+    /*testing if vector elements can be accessed
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
     cout << *object << endl;
     cout << (*object) -> getTitle() << endl; 
-  }
+    }*/
   
   }
 
@@ -62,12 +62,12 @@ int main() {
 
 void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video on Classes for pass by reference syntax for vector
 
-  //testing if vector elements can be accessed:
+  /*testing if vector elements can be accessed:
   cout << "what are the contents of vector?" << endl;
   
   for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
     cout << (*object) -> getYear()<<endl; 
-  }
+    }*/
   
   char type[10];
   char theTitle[20];
@@ -105,18 +105,18 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   if (!strcmp("music", type)) {
   char theArtist[50];
   float theDuration;
-  float theRating2;
+  char thePublisher2[50];
 
   cout << "Who is the song's artist?" << endl;
   cin >> theArtist;
 
+  cout << "Who is the song's publisher?" << endl;
+  cin >> thePublisher2;
+
   cout << "What is the song's duration (in minutes)?" << endl;
   cin >> theDuration;
-  
-  cout << "What is the song's rating?" << endl;
-  cin >> theRating2;
 
-  Music* newSong = new Music(theTitle, theYear, theArtist, theDuration, theRating2);
+  Music* newSong = new Music(theTitle, theYear, theArtist, thePublisher, theDuration);
   theList.push_back(newSong);
   }
 
@@ -125,7 +125,7 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   if (!strcmp("movie", type)) {
   char theDirector[50];
   float theDuration2;
-  float theRating3;
+  float theRating2;
 
   cout << "Who is the movie's director?" << endl;
   cin >> theDirector;
@@ -134,9 +134,9 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   cin >> theDuration2;
   
   cout << "What is the movies's rating?" << endl;
-  cin >> theRating3;
+  cin >> theRating2;
 
-  Movie* newMovie = new Movie(theTitle, theYear, theDirector, theDuration2, theRating3);
+  Movie* newMovie = new Movie(theTitle, theYear, theDirector, theDuration2, theRating2);
   cout << newMovie -> getTitle();
   theList.push_back(newMovie);
   }
@@ -163,16 +163,20 @@ void SEARCH(vector<DigitalMedia*> &theList) {
     cin >> name;
 
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-      
-      cout << "iterating" << endl;
-      cout << (*object) -> getTitle();
-      
-      if (!strcmp(name, (*object) -> getTitle())) {
-	cout << "in statement" << endl;
-	cout << (*object) -> getTitle() << endl;
-	cout << (*object) -> getYear() << endl;
+       
+      if (!strcmp(name, (*object) -> getTitle())) { //if an object has the name inputted:
+
+	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
+	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
 
 
+	//for videogames specifically:
+
+
+	//for music:
+
+
+	//for movies: 
       }
       
     }
