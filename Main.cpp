@@ -116,7 +116,7 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   cout << "What is the song's duration (in minutes)?" << endl;
   cin >> theDuration;
 
-  Music* newSong = new Music(theTitle, theYear, theArtist, thePublisher, theDuration);
+  Music* newSong = new Music(theTitle, theYear, theArtist, thePublisher2, theDuration);
   theList.push_back(newSong);
   }
 
@@ -171,12 +171,38 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 
 
 	//for videogames specifically:
+	if (1 == ((*object) -> getType())) {
 
+	  // from https://www.geeksforgeeks.org/static_cast-in-cpp/ static cast
+
+	  VideoGame* game = static_cast<VideoGame*>(*object);
+	  
+	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
+	  cout << "Rating: " << game -> getRating() << endl; //print rating
+
+	}
 
 	//for music:
+	if (3 == ((*object) -> getType())) {
 
+	  Music* mus = static_cast<Music*>(*object);
+	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
+	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
+	  cout << "Duration: " << mus -> getDuration() << endl; //print duration
+	  
+	}
 
-	//for movies: 
+	//for movies:
+
+	if (2 == ((*object)->getType())) {
+
+	  Movie* mov = static_cast<Movie*>(*object);
+	  
+	  cout << "Director: " << mov -> getDirector() << ", "; //print director
+	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
+	  cout << "Rating: " << mov -> getRating() << endl; //print rating
+	  
+	}
       }
       
     }
@@ -202,8 +228,8 @@ void DELETE(vector<DigitalMedia*> &theList) {
   
   cout << media -> getTitle() << endl;
   
-  //delete media;
-  //media = NULL;
+  delete media;
+  media = NULL;
 
   //help from Mr. Galbraith for this code
   cout << "deleted!";
