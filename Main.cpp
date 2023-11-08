@@ -178,7 +178,8 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  VideoGame* game = static_cast<VideoGame*>(*object);
 	  
 	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
-	  cout << "Rating: " << game -> getRating() << endl; //print rating
+	  cout << "Rating: " << game -> getRating() << ", "; //print rating
+	  cout << "Type: " << game -> getType() << endl;
 
 	}
 
@@ -188,7 +189,8 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  Music* mus = static_cast<Music*>(*object);
 	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
 	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
-	  cout << "Duration: " << mus -> getDuration() << endl; //print duration
+	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
+	  cout << "Type: " << mus -> getType() << endl;
 	  
 	}
 
@@ -200,8 +202,8 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  
 	  cout << "Director: " << mov -> getDirector() << ", "; //print director
 	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
-	  cout << "Rating: " << mov -> getRating() << endl; //print rating
-	  
+	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
+	  cout << "Type: " << mov -> getType() << endl;
 	}
       }
       
@@ -210,7 +212,61 @@ void SEARCH(vector<DigitalMedia*> &theList) {
   }
 
   else if (!strcmp("year", choice)) {
-    char year[20];
+
+    int year;
+    cout << "What is the year of the media you are searching for?" << endl;
+    cin >> year;
+
+    //copied from above (the search by name)
+    for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+       
+      if (year == ((*object) -> getYear())) { //if an object has the year inputted:
+
+	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
+	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
+
+
+	//for videogames specifically:
+	if (1 == ((*object) -> getType())) {
+
+	  // from https://www.geeksforgeeks.org/static_cast-in-cpp/ static cast
+
+	  VideoGame* game = static_cast<VideoGame*>(*object);
+	  
+	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
+	  cout << "Rating: " << game -> getRating() << ", "; //print rating
+	  cout << "Type: " << game -> getType() << endl;
+
+	}
+
+	//for music:
+	if (3 == ((*object) -> getType())) {
+
+	  Music* mus = static_cast<Music*>(*object);
+	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
+	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
+	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
+	  cout << "Type: " << mus -> getType() << endl;
+	  
+	}
+
+	//for movies:
+
+	if (2 == ((*object)->getType())) {
+
+	  Movie* mov = static_cast<Movie*>(*object);
+	  
+	  cout << "Director: " << mov -> getDirector() << ", "; //print director
+	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
+	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
+	  cout << "Type: " << mov -> getType() << endl;
+	}
+      }
+      
+    }
+
+
+    
   }
 
 
