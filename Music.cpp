@@ -13,6 +13,7 @@ Music::Music(char theTitle[20], int theYear, char theArtist[50], float theDurati
   strcpy(title,theTitle);
   year = theYear;
   //artist = theArtist; //refer to VideoGame.cpp comments - setting pointer to another pointer was the main error I saw, where my vector of media, when iterated through, could not print titles
+  artist = new char[50]; //added to avoid segmentation fault
   strcpy(artist, theArtist);
   duration = theDuration;
   rating = theRating;
@@ -20,7 +21,7 @@ Music::Music(char theTitle[20], int theYear, char theArtist[50], float theDurati
 }
 
 void Music::setArtist(char newArtist[50]) {
-  artist = newArtist;
+  strcpy(artist, newArtist);//strcpy instead of =
 }
 
 char* Music::getArtist() {
