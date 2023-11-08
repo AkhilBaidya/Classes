@@ -13,6 +13,7 @@ Movie::Movie(char theTitle[20], int theYear, char theDirector[50], float theDura
   strcpy(title, theTitle);
   year = theYear;
   //director = theDirector;
+  director = new char[50]; //need to add to avoid segmentation fault
   strcpy(director, theDirector);
   duration = theDuration;
   rating = theRating;
@@ -22,11 +23,11 @@ Movie::Movie(char theTitle[20], int theYear, char theDirector[50], float theDura
 Movie::~Movie(){
   //delete[] title;
   //delete[] director;
-  delete director; //which is a pointer -> don't need []
+  delete[] director; //which is a pointer -> don't need []
 }
 
 void Movie::setDirector(char newDirector[50]) {
-  director = newDirector;
+  strcpy(director, newDirector);
 }
 
 char* Movie::getDirector(){
