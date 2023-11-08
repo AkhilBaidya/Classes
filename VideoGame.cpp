@@ -33,3 +33,7 @@ void VideoGame::setRating(float newRating) {
 float VideoGame::getRating() {
   return rating;
 }
+
+char* VideoGame::getType() {
+  return type;
+}
