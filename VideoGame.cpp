@@ -5,6 +5,7 @@
 VideoGame::VideoGame() {
   publisher = new char[50];
   rating = 0.00; //default rating
+  type = 1;
 }
 
 VideoGame::VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating):DigitalMedia(theTitle, theYear) {
@@ -12,10 +13,11 @@ VideoGame::VideoGame(char theTitle[20], int theYear, char thePublisher[50], floa
   year = theYear;
   publisher = thePublisher;
   rating = theRating;
+  type = 1;
 }
 
 VideoGame::~VideoGame() {
-  delete publisher;
+  delete[] publisher;
 }
 
 void VideoGame::setPublisher(char newPublisher[50]) {
@@ -34,6 +36,3 @@ float VideoGame::getRating() {
   return rating;
 }
 
-char* VideoGame::getType() {
-  return type;
-}
