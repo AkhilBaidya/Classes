@@ -10,17 +10,19 @@ Movie::Movie() {
 }
 
 Movie::Movie(char theTitle[20], int theYear, char theDirector[50], float theDuration, float theRating):DigitalMedia(theTitle, theYear) {
-  title = theTitle;
+  strcpy(title, theTitle);
   year = theYear;
-  director = theDirector;
+  //director = theDirector;
+  strcpy(director, theDirector);
   duration = theDuration;
   rating = theRating;
   type = 2;
 }
 
 Movie::~Movie(){
-  delete[] title;
-  delete[] director;
+  //delete[] title;
+  //delete[] director;
+  delete director; //which is a pointer -> don't need []
 }
 
 void Movie::setDirector(char newDirector[50]) {
