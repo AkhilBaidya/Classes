@@ -23,7 +23,7 @@ void DELETE(vector<DigitalMedia*> &theList);
 int main() {
 
   bool editList = true;
-  vector<DigitalMedia*> list;
+  vector<DigitalMedia*> theList;
   
   while (editList) {
 
@@ -33,21 +33,27 @@ int main() {
 
     //use of strcmp based on code written in my StudentList project:
     if (!strcmp("ADD", command)) {
-      ADD(list);
+      ADD(theList);
     }
 
     else if (!strcmp("SEARCH", command)) {
-      SEARCH(list);
+      SEARCH(theList);
     }
 
     else if (!strcmp("DELETE", command)) {
-      DELETE(list);
+      DELETE(theList);
     }
 
     else if (!strcmp("QUIT", command)) {
 	editList = false; //this will end the loop
     }
 
+    //testing if vector elements can be accessed
+    for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+    cout << *object << endl;
+    cout << (*object) -> getTitle() << endl; 
+  }
+  
   }
 
   cout << "exiting the program" << endl;
@@ -56,6 +62,13 @@ int main() {
 
 void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video on Classes for pass by reference syntax for vector
 
+  //testing if vector elements can be accessed:
+  cout << "what are the contents of vector?" << endl;
+  
+  for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+    cout << (*object) -> getYear()<<endl; 
+  }
+  
   char type[10];
   char theTitle[20];
   int theYear;
@@ -124,6 +137,7 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
   cin >> theRating3;
 
   Movie* newMovie = new Movie(theTitle, theYear, theDirector, theDuration2, theRating3);
+  cout << newMovie -> getTitle();
   theList.push_back(newMovie);
   }
 
@@ -134,13 +148,34 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
 
 void SEARCH(vector<DigitalMedia*> &theList) {
 
+  for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+    cout << (*object) -> getTitle();
+    
+  }
   char choice[20];
   cout << "Would you like to search by name or year?" << endl;
   cin >> choice;
 
+  
   if (!strcmp("name", choice)) {
     char name[20];
-    
+    cout << "What is the name of the media you are searching for?" << endl;
+    cin >> name;
+
+    for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+      
+      cout << "iterating" << endl;
+      cout << (*object) -> getTitle();
+      
+      if (!strcmp(name, (*object) -> getTitle())) {
+	cout << "in statement" << endl;
+	cout << (*object) -> getTitle() << endl;
+	cout << (*object) -> getYear() << endl;
+
+
+      }
+      
+    }
     
   }
 
@@ -156,13 +191,17 @@ void DELETE(vector<DigitalMedia*> &theList) {
   char input[20];
   cin >> input;
 
-  VideoGame* media = new VideoGame(input, 1000, input, 5.00);
+  char input2[50];
+  cin >> input2;
 
-  cout << media -> getType(); 
+  VideoGame* media = new VideoGame(input, 1000, input2, 5.00);
   
-  delete media;
+  cout << media -> getTitle() << endl;
+  
+  //delete media;
   //media = NULL;
- //help from Mr. Galbraith for this code
+
+  //help from Mr. Galbraith for this code
   cout << "deleted!";
  
   //help from mr. galbraith for how to work with deconstructors (delete will just call this decons. and decons. only needs to delete and only will be able to delete pointers and non-primitive type data stored under the class, such as title, not year);
