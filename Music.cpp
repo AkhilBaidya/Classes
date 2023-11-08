@@ -47,11 +47,3 @@ void Music::setDuration(float newDuration) {
 float Music::getDuration() {
   return duration;
 }
-
-void Music::setRating(float newRating) {
-  rating = newRating;
-}
-
-float Music::getRating(){
-  return rating;
-}
