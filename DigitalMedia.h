@@ -21,6 +21,7 @@ public:
   
   char* getTitle(); //function to get the title
   int getYear(); //function to get the year
+  int getType(); //function to get the type of media
 
   void setTitle(char newTitle[20]); //set just the title;
   void setYear(int newYear); //set just the year
@@ -30,6 +31,7 @@ protected:
   //the title and year specific to a piece of digital media:
   char* title;
   int year;
+  int type;
   //Title Title;
 };
 
