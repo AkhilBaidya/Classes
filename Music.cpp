@@ -24,6 +24,11 @@ Music::Music(char theTitle[20], int theYear, char theArtist[50], char thePublish
   type = 3;
 }
 
+Music::~Music() { //destructor
+  delete[] artist;
+  delete[] publisher;
+}
+
 void Music::setArtist(char newArtist[50]) {
   strcpy(artist, newArtist);//strcpy instead of =
 }
