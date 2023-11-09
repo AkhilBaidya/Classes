@@ -333,24 +333,31 @@ void DELETE(vector<DigitalMedia*> &theList) {
     if (answer == 'y') {
       if (num > 0) {
 	for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-	  delete (*object);
+	  if (!strcmp(name, (*object) -> getTitle())){
+	    delete (*object);
+	    //(*object) = NULL;
+	  }
 	}
       }
       else {
 	cout << "nothing to delete!" << endl;
       }
     }
-    
   }
 
   else if (!strcmp("year", choice)) {
 
     int year;
-    cout << "What is the year of the media you are searching for?" << endl;
+    cout << "What is the year of the media you want to delete?" << endl;
     cin >> year;
 
+    cout << "Here are all the media of that year: " << endl;
+    int num2 = 0;
+
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-       
+
+      num2++; //counting number of objects that fit description
+      
       if (year == ((*object) -> getYear())) { //if an object has the year inputted:
 
 	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
@@ -392,7 +399,24 @@ void DELETE(vector<DigitalMedia*> &theList) {
 	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
 	  cout << "Type: " << "Movie" << endl;
 	}
-      }   
+      } 
+    }
+
+    char answer2; 
+    cout << "Would you like to delete these entries? y/n" << endl;
+    cin >> answer2;
+    if (answer2 == 'y') {
+      if (num2 > 0) {
+	for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+	  if (year == ((*object) -> getYear())) {
+	    delete (*object);
+	    (*object) = NULL;
+	  }
+	}
+      }
+      else {
+	cout << "nothing to delete!" << endl;
+      }
     }
   }
  
@@ -414,5 +438,6 @@ void DELETE(vector<DigitalMedia*> &theList) {
   cout << "deleted!";
  
   //help from mr. galbraith for how to work with deconstructors (delete will just call this decons. and decons. only needs to delete and only will be able to delete pointers and non-primitive type data stored under the class, such as title, not year);*/
+  return;
 }
 
