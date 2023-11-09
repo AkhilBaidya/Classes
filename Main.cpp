@@ -19,6 +19,7 @@ next idea to use char* for function types (that the function returns a char poin
 void ADD(vector<DigitalMedia*> &theList);
 void SEARCH(vector<DigitalMedia*> &theList);
 void DELETE(vector<DigitalMedia*> &theList);
+void print(DigitalMedia* object);
 
 int main() {
 
@@ -161,46 +162,8 @@ void SEARCH(vector<DigitalMedia*> &theList) {
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
        
       if (!strcmp(name, (*object) -> getTitle())) { //if an object has the name inputted:
-
-	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
-	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
-
-
-	//for videogames specifically:
-	if (1 == ((*object) -> getType())) {
-
-	  // from https://www.geeksforgeeks.org/static_cast-in-cpp/ static cast
-
-	  VideoGame* game = static_cast<VideoGame*>(*object);
-	  
-	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
-	  cout << "Rating: " << game -> getRating() << ", "; //print rating
-	  cout << "Type: " << "Videogame" << endl;
-
-	}
-
-	//for music:
-	if (3 == ((*object) -> getType())) {
-
-	  Music* mus = static_cast<Music*>(*object);
-	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
-	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
-	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
-	  cout << "Type: " << "Music" << endl;
-	  
-	}
-
-	//for movies:
-
-	if (2 == ((*object)->getType())) {
-
-	  Movie* mov = static_cast<Movie*>(*object);
-	  
-	  cout << "Director: " << mov -> getDirector() << ", "; //print director
-	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
-	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
-	  cout << "Type: " << "Movie" << endl;
-	}
+	print((*object));
+	
       }
       
     }
@@ -217,46 +180,7 @@ void SEARCH(vector<DigitalMedia*> &theList) {
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
        
       if (year == ((*object) -> getYear())) { //if an object has the year inputted:
-
-	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
-	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
-
-
-	//for videogames specifically:
-	if (1 == ((*object) -> getType())) {
-
-	  // from https://www.geeksforgeeks.org/static_cast-in-cpp/ static cast
-
-	  VideoGame* game = static_cast<VideoGame*>(*object);
-	  
-	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
-	  cout << "Rating: " << game -> getRating() << ", "; //print rating
-	  cout << "Type: " <<  "Videogame" << endl;
-
-	}
-
-	//for music:
-	if (3 == ((*object) -> getType())) {
-
-	  Music* mus = static_cast<Music*>(*object);
-	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
-	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
-	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
-	  cout << "Type: " << "Music" << endl;
-	  
-	}
-
-	//for movies:
-
-	if (2 == ((*object)->getType())) {
-
-	  Movie* mov = static_cast<Movie*>(*object);
-	  
-	  cout << "Director: " << mov -> getDirector() << ", "; //print director
-	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
-	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
-	  cout << "Type: " << "Movie" << endl;
-	}
+	print((*object));
       }   
     }
   }
@@ -276,72 +200,22 @@ void DELETE(vector<DigitalMedia*> &theList) {
     char name[20];
     cout << "What is the name of the media you want to delete?" << endl;
     cin >> name;
-
-    cout << "Here are all the media with that name: " << endl;
-    int num = 0;
     
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
        
       if (!strcmp(name, (*object) -> getTitle())) { //if an object has the name inputted:
 
-	num++; //increase number to delete
+	print((*object));
 	
-	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
-	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
-
-
-	//for videogames specifically:
-	if (1 == ((*object) -> getType())) {
-	  
-	  VideoGame* game = static_cast<VideoGame*>(*object);
-	  
-	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
-	  cout << "Rating: " << game -> getRating() << ", "; //print rating
-	  cout << "Type: " << "Videogame" << endl;
-
+	char answer; 
+	cout << "Would you like to delete this entry? y/n" << endl;
+	cin >> answer;
+	if (answer == 'y') {
+	  delete (*object);
 	}
 
-	//for music:
-	if (3 == ((*object) -> getType())) {
-
-	  Music* mus = static_cast<Music*>(*object);
-	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
-	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
-	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
-	  cout << "Type: " << "Music" << endl;
-	  
-	}
-
-	//for movies:
-
-	if (2 == ((*object)->getType())) {
-
-	  Movie* mov = static_cast<Movie*>(*object);
-	  
-	  cout << "Director: " << mov -> getDirector() << ", "; //print director
-	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
-	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
-	  cout << "Type: " << "Movie" << endl;
-	}
       }
       
-    }
-
-    char answer; 
-    cout << "Would you like to delete these entries? y/n" << endl;
-    cin >> answer;
-    if (answer == 'y') {
-      if (num > 0) {
-	for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-	  if (!strcmp(name, (*object) -> getTitle())){
-	    delete (*object);
-	    //(*object) = NULL;
-	  }
-	}
-      }
-      else {
-	cout << "nothing to delete!" << endl;
-      }
     }
   }
 
@@ -351,72 +225,18 @@ void DELETE(vector<DigitalMedia*> &theList) {
     cout << "What is the year of the media you want to delete?" << endl;
     cin >> year;
 
-    cout << "Here are all the media of that year: " << endl;
-    int num2 = 0;
-
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-
-      num2++; //counting number of objects that fit description
       
       if (year == ((*object) -> getYear())) { //if an object has the year inputted:
+	print((*object));
 
-	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
-	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
-
-
-	//for videogames specifically:
-	if (1 == ((*object) -> getType())) {
-
-	  // from https://www.geeksforgeeks.org/static_cast-in-cpp/ static cast
-
-	  VideoGame* game = static_cast<VideoGame*>(*object);
-	  
-	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
-	  cout << "Rating: " << game -> getRating() << ", "; //print rating
-	  cout << "Type: " <<  "Videogame" << endl;
-
-	}
-
-	//for music:
-	if (3 == ((*object) -> getType())) {
-
-	  Music* mus = static_cast<Music*>(*object);
-	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
-	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
-	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
-	  cout << "Type: " << "Music" << endl;
-	  
-	}
-
-	//for movies:
-
-	if (2 == ((*object)->getType())) {
-
-	  Movie* mov = static_cast<Movie*>(*object);
-	  
-	  cout << "Director: " << mov -> getDirector() << ", "; //print director
-	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
-	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
-	  cout << "Type: " << "Movie" << endl;
+	char answer2; 
+	cout << "Would you like to delete this entry? y/n" << endl;
+	cin >> answer2;
+	if (answer2 == 'y') {
+	  delete (*object);
 	}
       } 
-    }
-
-    char answer2; 
-    cout << "Would you like to delete these entries? y/n" << endl;
-    cin >> answer2;
-    if (answer2 == 'y') {
-      if (num2 > 0) {
-	for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-	  if (year == ((*object) -> getYear())) {
-	    delete (*object);
-	    (*object) = NULL;
-	  }
-	}
-      }
-      else {
-	cout << "nothing to delete!" << endl;
-      }
     }
   }
  
@@ -441,3 +261,45 @@ void DELETE(vector<DigitalMedia*> &theList) {
   return;
 }
 
+void print(DigitalMedia* object) {
+  
+	cout << "Title: " << object -> getTitle() << ", "; //print the title
+	cout << "Year of Publication: " << (object) -> getYear() << ", "; //print the year
+
+
+	//for videogames specifically:
+	if (1 == ((object) -> getType())) {
+	  
+	  VideoGame* game = static_cast<VideoGame*>(object);
+	  
+	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publishe
+	  cout << "Rating: " << game -> getRating() << ", "; //print rating
+	  cout << "Type: " << "Videogame" << endl;
+
+	}
+
+	//for music:
+	if (3 == ((object) -> getType())) {
+
+	  Music* mus = static_cast<Music*>(object);
+	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
+	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
+	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
+	  cout << "Type: " << "Music" << endl;
+	  
+	}
+
+	//for movies:
+
+	if (2 == ((object)->getType())) {
+
+	  Movie* mov = static_cast<Movie*>(object);
+	  
+	  cout << "Director: " << mov -> getDirector() << ", "; //print director
+	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
+	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
+	  cout << "Type: " << "Movie" << endl;
+	}
+
+	return;
+}
