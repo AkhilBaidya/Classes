@@ -194,6 +194,7 @@ void DELETE(vector<DigitalMedia*> &theList) {
   cout << "Would you like to delete by name or year?" << endl;
   cin >> choice;
 
+  vector<vector<DigitalMedia*>::iterator> toDel; //stores iterators that I want to be deleted
 
   //copied and pasted code from the search function (since the delete function will have the same functionality):
   if (!strcmp("name", choice)) {
@@ -211,7 +212,7 @@ void DELETE(vector<DigitalMedia*> &theList) {
 	cout << "Would you like to delete this entry? y/n" << endl;
 	cin >> answer;
 	if (answer == 'y') {
-	  delete (*object);
+	  toDel.push_back(object);
 	}
 
       }
@@ -234,12 +235,26 @@ void DELETE(vector<DigitalMedia*> &theList) {
 	cout << "Would you like to delete this entry? y/n" << endl;
 	cin >> answer2;
 	if (answer2 == 'y') {
-	  delete (*object);
+	  toDel.push_back(object);
 	}
       } 
     }
   }
- 
+
+  int counter = 0;
+  
+  for (vector<vector<DigitalMedia*>::iterator>::iterator rem = toDel.begin(); rem != toDel.end(); rem++) {
+
+    cout << "deleting" << endl;
+    print(*(*rem));
+    
+    vector<DigitalMedia*>::iterator willDel = (*rem) - counter;
+
+    delete (*willDel); 
+    
+    theList.erase(willDel); //deleting objects (uses deconstructor defined in classes
+    counter++; //to adjust for the descreasing size of theList as I remove values from it!
+  }
   
   /*char input[20];
   cin >> input;
