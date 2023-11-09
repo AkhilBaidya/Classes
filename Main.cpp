@@ -147,11 +147,7 @@ void ADD(vector<DigitalMedia*> &theList) { //referred to Mr. Galbraith's video o
 }
 
 void SEARCH(vector<DigitalMedia*> &theList) {
-
-  for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
-    cout << (*object) -> getTitle();
-    
-  }
+  
   char choice[20];
   cout << "Would you like to search by name or year?" << endl;
   cin >> choice;
@@ -179,7 +175,7 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  
 	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
 	  cout << "Rating: " << game -> getRating() << ", "; //print rating
-	  cout << "Type: " << game -> getType() << endl;
+	  cout << "Type: " << "Videogame" << endl;
 
 	}
 
@@ -190,7 +186,7 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
 	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
 	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
-	  cout << "Type: " << mus -> getType() << endl;
+	  cout << "Type: " << "Music" << endl;
 	  
 	}
 
@@ -203,7 +199,7 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  cout << "Director: " << mov -> getDirector() << ", "; //print director
 	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
 	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
-	  cout << "Type: " << mov -> getType() << endl;
+	  cout << "Type: " << "Movie" << endl;
 	}
       }
       
@@ -235,7 +231,7 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  
 	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
 	  cout << "Rating: " << game -> getRating() << ", "; //print rating
-	  cout << "Type: " << game -> getType() << endl;
+	  cout << "Type: " <<  "Videogame" << endl;
 
 	}
 
@@ -246,7 +242,7 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  cout << "Artist: " << mus -> getArtist() << ", "; //print artist
 	  cout << "Publisher: " << mus -> getPublisher() << ", "; //print publisher
 	  cout << "Duration: " << mus -> getDuration() << ", "; //print duration
-	  cout << "Type: " << mus -> getType() << endl;
+	  cout << "Type: " << "Music" << endl;
 	  
 	}
 
@@ -259,22 +255,22 @@ void SEARCH(vector<DigitalMedia*> &theList) {
 	  cout << "Director: " << mov -> getDirector() << ", "; //print director
 	  cout << "Duration: " << mov -> getDuration() << ", "; //print duration
 	  cout << "Rating: " << mov -> getRating() << ", "; //print rating
-	  cout << "Type: " << mov -> getType() << endl;
+	  cout << "Type: " << "Movie" << endl;
 	}
-      }
-      
+      }   
     }
-
-
-    
   }
-
-
   return;
 }
 
 void DELETE(vector<DigitalMedia*> &theList) {
-  char input[20];
+
+  //choose to delete by name or by year:
+  char choice[20];
+  cout << "Would you like to delete by name or year?" << endl;
+  cin >> choice;
+
+  /*char input[20];
   cin >> input;
 
   char input2[50];
@@ -290,6 +286,6 @@ void DELETE(vector<DigitalMedia*> &theList) {
   //help from Mr. Galbraith for this code
   cout << "deleted!";
  
-  //help from mr. galbraith for how to work with deconstructors (delete will just call this decons. and decons. only needs to delete and only will be able to delete pointers and non-primitive type data stored under the class, such as title, not year);
+  //help from mr. galbraith for how to work with deconstructors (delete will just call this decons. and decons. only needs to delete and only will be able to delete pointers and non-primitive type data stored under the class, such as title, not year);*/
 }
 
