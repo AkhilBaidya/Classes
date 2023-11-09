@@ -14,6 +14,8 @@ class Music : public DigitalMedia {
   
   Music(char theTitle[20], int theYear, char theArtist[50], char thePublisher[50], float theDuration); 
 
+  ~Music(); //destructor
+  
   char* getArtist();
 
   char* getPublisher();
