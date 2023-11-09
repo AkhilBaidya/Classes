@@ -1,72 +1,93 @@
+//Classes Project: Digital Media (Parent) Class Definitions
+//by Akhil Baidya
+
+//Submission date: 11/8/2023
+
+/*About: This .cpp file defines the methods within the Digital Media Class, such as
+the constructor, destructor, and set and get methods for fields such as title and publication year.
+
+This class, Digital Media, will be the parent class to the other classes in the project, where these methods will be inherited by the children classes (VideoGames, Music, and Movies).
+ */
+
+
 #include <iostream>
 #include <cstring>
 #include "DigitalMedia.h"
 
 using namespace std;
 
-/*struct Title { //idea to return a struct w/ an array instead of an array from https://stackoverflow.com/questions/4264304/how-to-return-an-array-from-a-function
-  char theTitle[20];
-  };*/
+//CONSTRUCTORS:
 
-//constructor function:
+//Constructor (sets fields to some default value):
 DigitalMedia::DigitalMedia() {
 
-  //create space for the variables in the class:
-  title = new char[20];
-  //Title = new Title;
-  //Title.theTitle = title; //create a Title struct to encase the title array
-  year = 2023; //default year
+  title = new char[20]; //creates space for the title
+  
+  year = 2023; //default year is 2023
 
-  type = 0;
+  type = 0; //default type of media is undefined (indentified by integer 0)
   
 }
 
-//construct object of the class and set variables:
+//Constructor with input variables:
 DigitalMedia::DigitalMedia(char newTitle[20], int newYear) {
-
-  //create space for the variables:
-  title = new char[20];
-  //Title = new Title;
-  //Title.theTitle = title;
   
-  year = newYear;
-
-  type = 0;
+  title = new char[20]; //creates space for title
   
-  //define them based on the inputs newTitle and newYear:
-  strcpy(title, newTitle);
+  year = newYear; //set the year to input
 
-  //title = newTitle;
+  type = 0; //set the type to default type 0
   
+  strcpy(title, newTitle); //set the title to input
 }
 
-//destroy class object:
+//DESTRUCTOR:
+
+//Destroys class object when called:
 DigitalMedia::~DigitalMedia() {
-  delete[] title; //https://www.youtube.com/watch?v=PXcRe-W2w7s&t=980s was used to get that I need to only delete dynamically allocated memory (video provided on Canvas about the Rule of Three implementation - also showed how to delete an array with delete[])
+
+  /*Help from Mr. Galbraith in clarifying what needs to be deleted in a destructor:
+
+    Pointers need to be deleted (as they are connected to outside objects initialized as "new" which would otherwise remain when the Class Object is deleted)
+  */
+
+  /*Additionally, referenced video of Rule of Three Implementation in Canvas,
+  https://www.youtube.com/watch?v=PXcRe-W2w7s&t=980s (by ReelLearning), which supported the idea that I needed to delete such dynamically allocated memory. This source also showed to use [] in delete operator when deleting array. */
+  
+  delete[] title;
+
 }
 
 
-//setting the title:
+//METHODS RELATED TO TITLE:
+
+//Setting the title to a value:
 void DigitalMedia::setTitle(char newTitle[20]) {
-  strcpy(title, newTitle); //set variable equal to input
-  //title = newTitle;
+  strcpy(title, newTitle); //set title equal to input
 }
 
-//getting the title:
-char* DigitalMedia::getTitle() {
-  return title;
+//Getting the title:
+char* DigitalMedia::getTitle() { 
+  return title; //return the title
+
+  /*Referenced Mr. Galbraith's video for using type char* for getTitle() to be able to access array from method (refer to DigitalMedia.h for link to source)*/ 
 }
 
-//setting the year:
+//METHODS RELATED TO YEAR:
+
+//Setting the year to a value:
 void DigitalMedia::setYear(int newYear) {
-  year = newYear; //set variable equal to input
+  year = newYear; //set year equal to input
 }
 
-//getting the year:
+//Getting the year:
 int DigitalMedia::getYear() {
-  return year;
+  return year; //return the year
 }
 
+//METHOD RELATED TO TYPE:
+
+//Get (return) the identifying number for the type of media:
 int DigitalMedia::getType() {
   return type;
 }
