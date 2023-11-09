@@ -274,22 +274,25 @@ void DELETE(vector<DigitalMedia*> &theList) {
   //copied and pasted code from the search function (since the delete function will have the same functionality):
   if (!strcmp("name", choice)) {
     char name[20];
-    cout << "What is the name of the media you are searching for?" << endl;
+    cout << "What is the name of the media you want to delete?" << endl;
     cin >> name;
 
+    cout << "Here are all the media with that name: " << endl;
+    int num = 0;
+    
     for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
        
       if (!strcmp(name, (*object) -> getTitle())) { //if an object has the name inputted:
 
+	num++; //increase number to delete
+	
 	cout << "Title: " << (*object) -> getTitle() << ", "; //print the title
 	cout << "Year of Publication: " << (*object) -> getYear() << ", "; //print the year
 
 
 	//for videogames specifically:
 	if (1 == ((*object) -> getType())) {
-
-	  // from https://www.geeksforgeeks.org/static_cast-in-cpp/ static cast
-
+	  
 	  VideoGame* game = static_cast<VideoGame*>(*object);
 	  
 	  cout << "Publisher: " << game -> getPublisher() << ", "; //print publisher
@@ -322,6 +325,20 @@ void DELETE(vector<DigitalMedia*> &theList) {
 	}
       }
       
+    }
+
+    char answer; 
+    cout << "Would you like to delete these entries? y/n" << endl;
+    cin >> answer;
+    if (answer == 'y') {
+      if (num > 0) {
+	for (vector<DigitalMedia*>::iterator object = theList.begin(); object != theList.end(); object++) {
+	  delete (*object);
+	}
+      }
+      else {
+	cout << "nothing to delete!" << endl;
+      }
     }
     
   }
