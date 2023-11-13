@@ -26,7 +26,7 @@ public:
   VideoGame();
 
   //construct with setting variables to inputs:
-  VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating)
+  VideoGame(char theTitle[20], int theYear, char thePublisher[50], float theRating);
    
   //DESTRUCTOR:
   virtual ~VideoGame();
